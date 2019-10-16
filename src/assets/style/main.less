@@ -1,0 +1,53 @@
+@import "common/common";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .inner {
+    display: flex;
+    flex: 1;
+    width: 500px;
+    margin: auto;
+    background-color: #ededed;
+
+    .columns {
+      width: 100%;
+      background-color: green;
+      position: relative;
+      overflow-x: hidden;
+      .column {
+        display: flex;
+        margin: auto;
+        border: 1px dotted #ededed;
+        background-color: beige;
+        position: absolute;
+        height: 48px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        .dragHandle {
+          position: absolute;
+          right: calc(50% - 2px);
+          background-color: magenta;
+          width: 4px;
+          height: 50px;
+          cursor: col-resize;
+          z-index: 4;
+        }
+
+        //&:first-child {
+        //  border-right: 0;
+        //  border-left: 0;
+        //}
+        //
+        &:last-child {
+          background-color: deepskyblue;
+          //display: none;
+          //border-left: 0;
+        }
+      }
+    }
+  }
+}
